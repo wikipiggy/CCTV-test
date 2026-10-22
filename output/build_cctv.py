@@ -29,6 +29,7 @@ for m in glass:
  floors=nt.nodes.new('ShaderNodeVectorMath'); floors.operation='FLOOR'; noise=nt.nodes.new('ShaderNodeTexWhiteNoise'); noise.noise_dimensions='3D'; ramp=nt.nodes.new('ShaderNodeValToRGB')
  ramp.color_ramp.elements[0].color=(.11,.19,.245,1); ramp.color_ramp.elements[1].color=(.19,.29,.35,1)
  nt.links.new(geo.outputs['Position'],scale.inputs[0]); nt.links.new(scale.outputs['Vector'],floors.inputs[0]); nt.links.new(floors.outputs['Vector'],noise.inputs['Vector']); nt.links.new(noise.outputs['Value'],ramp.inputs[0]); nt.links.new(ramp.outputs[0],bs.inputs['Base Color'])
+sampleglass=material('Controlled sample glass',(.16,.26,.32),.48,.18)
 slot=material('Recess graphite',(.025,.032,.039),.7,.3); frame=material('Fine aluminium divisions',(.32,.37,.39),.75,.3)
 roofmat=material('Zinc roof',(.27,.3,.32),.65,.4); stone=material('Limestone paving',(.48,.48,.43),0,.85); road=material('Asphalt',(.065,.07,.075),0,.9)
 lawn=material('Lawn',(.15,.25,.065),0,.9); foliage=material('Foliage',(.065,.16,.04),0,.85); bark=material('Bark',(.12,.08,.04),0,.9); white=material('Lane paint',(.78,.77,.7),0,.8); concrete=material('Context concrete',(.44,.45,.43),0,.85)
@@ -80,7 +81,7 @@ def surface(n,pts,depth=.03,offset=0,g='Facade',station=0,spacing=16):
    co=list(ring.coords)
    for (x,y),(xx,yy) in zip(co,co[1:]):
     st=len(verts); verts.extend([xyz(x,y),xyz(xx,yy),xyz(xx,yy,depth),xyz(x,y,depth)]); faces.append((st,st+1,st+2,st+3)); inds.append(9)
- ob=mesh(n,verts,faces,glass+[slot],inds,g); ob['recess_depth_m']=depth; ob['glass_removed_in_grooves']=True
+ ob=mesh(n,verts,faces,([sampleglass]*9 if g=='Recess samples' else glass)+[slot],inds,g); ob['recess_depth_m']=depth; ob['glass_removed_in_grooves']=True
  # Small bevel only; angle test excludes coplanar triangles.
  be=ob.modifiers.new('3mm groove edge bevel','BEVEL'); be.width=.003; be.segments=1; be.limit_method='ANGLE'; be.angle_limit=.6
  # Fine regular frame strips stop at the recessed structural bands.
@@ -139,6 +140,14 @@ cube('West arterial viaduct',(-181,0,5),(17,850,.9),road)
 for y in range(-390,400,40):cube('Viaduct pier',(-181,y,2),(2,3,5),concrete)
 for x in [-189.2,-172.8]:cube('Viaduct parapet',(x,0,5.7),(.35,850,.6),concrete)
 for x,y,wx,wy in [(-88,-73,36,60),(27,-104,112,20),(-93,47,22,115),(48,120,116,12),(120,-8,10,170)]:cube('Lawn',(x,y,.46),(wx,wy,.12),lawn)
+# Angular planting beds and diagonal circulation, derived approximately from the site plan.
+for k,points in enumerate([
+ [(-110,-112),(-8,-112),(-70,-78)], [(-60,-76),(-5,-108),(35,-78)],
+ [(-10,-74),(34,-108),(67,-78)], [(-112,-64),(-76,-86),(-77,14)],
+ [(-112,-30),(-80,10),(-112,47)]]):
+ mesh('Angular landscape bed '+str(k),[(x,y,.54) for x,y in points],[(0,1,2)],[lawn],g='Site')
+for p,q in [((-113,-116),(60,-73)),((-110,-70),(-20,-115)),((-115,-30),(-75,25))]:
+ dx=q[0]-p[0]; dy=q[1]-p[1]; ob=cube('Diagonal plaza walk',((p[0]+q[0])/2,(p[1]+q[1])/2,.56),(math.hypot(dx,dy),3.2,.035),stone); ob.rotation_euler.z=math.atan2(dy,dx)
 shared_tree=None
 for i in range(115):
  if i<65:

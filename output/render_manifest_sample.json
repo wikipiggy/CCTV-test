@@ -1,0 +1,62 @@
+[
+  {
+    "file": "sample_recess_20mm.png",
+    "camera": "Recess 20mm",
+    "width": 1200,
+    "height": 1200,
+    "sample_limit": 32,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 40.85
+  },
+  {
+    "file": "sample_recess_30mm.png",
+    "camera": "Recess 30mm",
+    "width": 1200,
+    "height": 1200,
+    "sample_limit": 32,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 39.31
+  },
+  {
+    "file": "sample_recess_40mm.png",
+    "camera": "Recess 40mm",
+    "width": 1200,
+    "height": 1200,
+    "sample_limit": 32,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 41.85
+  },
+  {
+    "file": "sample_macro_20mm.png",
+    "camera": "Macro 20mm",
+    "width": 1200,
+    "height": 1200,
+    "sample_limit": 32,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 50.3
+  },
+  {
+    "file": "sample_macro_30mm.png",
+    "camera": "Macro 30mm",
+    "width": 1200,
+    "height": 1200,
+    "sample_limit": 32,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 52.06
+  },
+  {
+    "file": "sample_macro_40mm.png",
+    "camera": "Macro 40mm",
+    "width": 1200,
+    "height": 1200,
+    "sample_limit": 32,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 45.8
+  }
+]
