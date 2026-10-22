@@ -1,0 +1,42 @@
+[
+  {
+    "file": "progress_south.png",
+    "camera": "Progress south",
+    "width": 1000,
+    "height": 1000,
+    "sample_limit": 24,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 17.07
+  },
+  {
+    "file": "progress_west.png",
+    "camera": "Progress west",
+    "width": 1000,
+    "height": 1000,
+    "sample_limit": 24,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 17.97
+  },
+  {
+    "file": "progress_plan.png",
+    "camera": "Progress plan",
+    "width": 1000,
+    "height": 1000,
+    "sample_limit": 24,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 34.25
+  },
+  {
+    "file": "progress_perspective.png",
+    "camera": "01 Southwest city",
+    "width": 1000,
+    "height": 1000,
+    "sample_limit": 24,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 25.0
+  }
+]

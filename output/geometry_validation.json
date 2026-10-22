@@ -9,200 +9,240 @@
       "width": 48.0,
       "height": 161.98148042291749,
       "depth": 0.03,
-      "glass_area": 7150.025070638518,
-      "groove_area": 625.0859896615187,
+      "glass_area": 7133.69521480467,
+      "groove_area": 641.4158454953858,
       "domain_area": 7775.11106030004,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 9,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Tower 1 face 1",
       "width": 60.0,
       "height": 161.98148042291749,
       "depth": 0.03,
-      "glass_area": 8936.582075353432,
-      "groove_area": 782.3067500216187,
+      "glass_area": 8923.438739903906,
+      "groove_area": 795.4500854711503,
       "domain_area": 9718.888825375048,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 9,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Tower 1 face 2",
       "width": 48.0,
       "height": 161.98148042291749,
       "depth": 0.03,
-      "glass_area": 7150.025070638527,
-      "groove_area": 625.0859896615153,
+      "glass_area": 7133.69521480467,
+      "groove_area": 641.4158454953796,
       "domain_area": 7775.11106030004,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 9,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Tower 1 face 3",
       "width": 60.0,
       "height": 161.98148042291749,
       "depth": 0.03,
-      "glass_area": 8936.58207535344,
-      "groove_area": 782.3067500216167,
+      "glass_area": 8923.43873990391,
+      "groove_area": 795.4500854711432,
       "domain_area": 9718.888825375048,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 9,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Tower 2 face 0",
       "width": 60.0,
       "height": 161.98148042291749,
       "depth": 0.03,
-      "glass_area": 8936.582075353434,
-      "groove_area": 782.3067500216096,
+      "glass_area": 8923.438739903906,
+      "groove_area": 795.450085471143,
       "domain_area": 9718.888825375048,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 9,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Tower 2 face 1",
       "width": 48.0,
       "height": 161.98148042291749,
       "depth": 0.03,
-      "glass_area": 7150.02507063852,
-      "groove_area": 625.0859896615244,
+      "glass_area": 7133.695214804668,
+      "groove_area": 641.4158454953783,
       "domain_area": 7775.11106030004,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 9,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Tower 2 face 2",
       "width": 60.0,
       "height": 161.98148042291749,
       "depth": 0.03,
-      "glass_area": 8936.58207535343,
-      "groove_area": 782.3067500216187,
+      "glass_area": 8923.438739903908,
+      "groove_area": 795.450085471141,
       "domain_area": 9718.888825375048,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 9,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Tower 2 face 3",
       "width": 48.0,
       "height": 161.98148042291749,
       "depth": 0.03,
-      "glass_area": 7150.025070638522,
-      "groove_area": 625.085989661529,
+      "glass_area": 7133.695214804669,
+      "groove_area": 641.4158454953762,
       "domain_area": 7775.11106030004,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 9,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "L overhang face 0",
       "width": 153.0,
       "height": 63.40755608125134,
       "depth": 0.03,
-      "glass_area": 8882.01277796774,
-      "groove_area": 819.3433024637069,
+      "glass_area": 8874.515041810924,
+      "groove_area": 826.8410386205272,
       "domain_area": 9701.356080431455,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 10,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "L overhang face 1",
       "width": 48.0,
       "height": 53.473445969267075,
       "depth": 0.03,
-      "glass_area": 2351.172242905269,
-      "groove_area": 215.5531636195506,
+      "glass_area": 2348.7521557301743,
+      "groove_area": 217.97325079464534,
       "domain_area": 2566.72540652482,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 5,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "L overhang face 2",
       "width": 105.0,
       "height": 60.027806845758235,
       "depth": 0.03,
-      "glass_area": 5770.020644112803,
-      "groove_area": 532.8990746918023,
+      "glass_area": 5762.501272158861,
+      "groove_area": 540.4184466457451,
       "domain_area": 6302.919718804615,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 9,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "L overhang face 3",
       "width": 105.0,
       "height": 66.62344448332541,
       "depth": 0.03,
-      "glass_area": 6411.091850369344,
-      "groove_area": 584.3698203798201,
+      "glass_area": 6393.973363506614,
+      "groove_area": 601.4883072425396,
       "domain_area": 6995.461670749169,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 9,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "L overhang face 4",
       "width": 48.0,
       "height": 70.04067030815602,
       "depth": 0.03,
-      "glass_area": 3080.77075498907,
-      "groove_area": 281.18141980242285,
+      "glass_area": 3077.5332915860563,
+      "groove_area": 284.41888320543404,
       "domain_area": 3361.952174791489,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 4,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "L overhang face 5",
       "width": 153.0,
       "height": 73.37914278257311,
       "depth": 0.03,
-      "glass_area": 10294.82555409315,
-      "groove_area": 932.1832916405299,
+      "glass_area": 10268.609051659354,
+      "groove_area": 958.3997940743147,
       "domain_area": 11227.008845733686,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 12,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Recessed west soffit",
       "width": 48.0,
       "height": 93.0,
       "depth": 0.03,
-      "glass_area": 4099.592008705303,
-      "groove_area": 364.4079912946972,
+      "glass_area": 4083.3204058464516,
+      "groove_area": 380.6795941535508,
       "domain_area": 4464.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 8,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Recessed south soffit",
       "width": 45.0,
       "height": 48.0,
       "depth": 0.03,
-      "glass_area": 1974.8419181577335,
-      "groove_area": 185.1580818422665,
+      "glass_area": 1971.4156281976418,
+      "groove_area": 188.58437180235916,
       "domain_area": 2160.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 5,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "North podium0",
       "width": 162.0,
       "height": 42.0,
       "depth": 0.03,
-      "glass_area": 6210.5803788902695,
-      "groove_area": 593.4196211097168,
+      "glass_area": 6210.580378890276,
+      "groove_area": 593.4196211097183,
       "domain_area": 6804.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 11,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "North podium1",
       "width": 34.0,
       "height": 42.0,
       "depth": 0.03,
-      "glass_area": 1303.2715669278052,
-      "groove_area": 124.72843307219469,
+      "glass_area": 1303.2715669278055,
+      "groove_area": 124.72843307219456,
       "domain_area": 1428.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 4,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "North podium2",
       "width": 162.0,
       "height": 42.0,
       "depth": 0.03,
-      "glass_area": 6210.5803788902695,
-      "groove_area": 593.4196211097168,
+      "glass_area": 6210.580378890276,
+      "groove_area": 593.4196211097183,
       "domain_area": 6804.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 11,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "North podium3",
       "width": 34.0,
       "height": 42.0,
       "depth": 0.03,
-      "glass_area": 1303.2715669278052,
-      "groove_area": 124.72843307219469,
+      "glass_area": 1303.2715669278055,
+      "groove_area": 124.72843307219456,
       "domain_area": 1428.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 4,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "East podium0",
@@ -210,19 +250,23 @@
       "height": 36.0,
       "depth": 0.03,
       "glass_area": 1052.407723017046,
-      "groove_area": 99.59227698295368,
+      "groove_area": 99.59227698295396,
       "domain_area": 1152.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 3,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "East podium1",
       "width": 168.0,
       "height": 36.0,
       "depth": 0.03,
-      "glass_area": 5520.301040537289,
-      "groove_area": 527.6989594627046,
+      "glass_area": 5520.301040537285,
+      "groove_area": 527.6989594627065,
       "domain_area": 6048.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 11,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "East podium2",
@@ -230,19 +274,23 @@
       "height": 36.0,
       "depth": 0.03,
       "glass_area": 1052.407723017046,
-      "groove_area": 99.59227698295368,
+      "groove_area": 99.59227698295396,
       "domain_area": 1152.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 3,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "East podium3",
       "width": 168.0,
       "height": 36.0,
       "depth": 0.03,
-      "glass_area": 5520.301040537289,
-      "groove_area": 527.6989594627046,
+      "glass_area": 5520.301040537285,
+      "groove_area": 527.6989594627065,
       "domain_area": 6048.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 11,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Sample 20mm front",
@@ -250,9 +298,11 @@
       "height": 12.0,
       "depth": 0.02,
       "glass_area": 108.35767683018335,
-      "groove_area": 11.642323169816654,
+      "groove_area": 11.64232316981664,
       "domain_area": 120.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 1,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Sample 20mm return",
@@ -260,9 +310,11 @@
       "height": 12.0,
       "depth": 0.02,
       "glass_area": 88.40415045689872,
-      "groove_area": 7.595849543101287,
+      "groove_area": 7.595849543101285,
       "domain_area": 96.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 1,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Sample 30mm front",
@@ -270,9 +322,11 @@
       "height": 12.0,
       "depth": 0.03,
       "glass_area": 108.35767683018335,
-      "groove_area": 11.642323169816654,
+      "groove_area": 11.64232316981664,
       "domain_area": 120.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 1,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Sample 30mm return",
@@ -280,9 +334,11 @@
       "height": 12.0,
       "depth": 0.03,
       "glass_area": 88.40415045689872,
-      "groove_area": 7.595849543101287,
+      "groove_area": 7.595849543101285,
       "domain_area": 96.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 1,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Sample 40mm front",
@@ -290,9 +346,11 @@
       "height": 12.0,
       "depth": 0.04,
       "glass_area": 108.35767683018335,
-      "groove_area": 11.642323169816654,
+      "groove_area": 11.64232316981664,
       "domain_area": 120.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 1,
+      "unconnected_density_endpoints": 0
     },
     {
       "name": "Sample 40mm return",
@@ -300,9 +358,11 @@
       "height": 12.0,
       "depth": 0.04,
       "glass_area": 88.40415045689872,
-      "groove_area": 7.595849543101287,
+      "groove_area": 7.595849543101285,
       "domain_area": 96.0,
-      "overlap": 0.0
+      "overlap": 0.0,
+      "density_segments": 1,
+      "unconnected_density_endpoints": 0
     }
   ]
 }

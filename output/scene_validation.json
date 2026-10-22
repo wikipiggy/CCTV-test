@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "object_count": 1250,
+  "object_count": 1244,
   "camera_count": 13,
   "recessed_surfaces": 30,
   "body_height_m": 234.00001525878906,
@@ -9,8 +9,8 @@
     "30mm": 0.029999999329447746,
     "40mm": 0.03999999910593033
   },
-  "mesh_vertices": 287738,
-  "mesh_polygons": 126835,
+  "mesh_vertices": 290268,
+  "mesh_polygons": 127671,
   "external_image_dependencies": 0,
   "render_engine": "CYCLES",
   "denoising": false,
@@ -20,6 +20,7 @@
     "body maximum 234m",
     "20/30/40mm recess metadata and measured mesh depths",
     "glass and groove area partition",
-    "zero external image dependencies"
+    "zero external image dependencies",
+    "all density-line endpoints lie on primary grid or facade boundary"
   ]
 }

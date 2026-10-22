@@ -4,8 +4,8 @@ Blender 4.3.2 / Python 3.13; Shapely 2.1.2. No interior architecture.
 import bpy, math, random, sys, os, json, argparse
 from mathutils import Vector
 sys.path.insert(0,os.environ.get('CCTV_GEOMETRY_PATH','/workspace/cctv-blender-python'))
-from shapely.geometry import Polygon,LineString,box
-from shapely.ops import unary_union
+from shapely.geometry import Polygon,LineString,box,Point
+from shapely.ops import unary_union,substring
 from shapely import constrained_delaunay_triangles
 def triangulate(p):return list(constrained_delaunay_triangles(p).geoms)
 parser=argparse.ArgumentParser(); parser.add_argument('--stage',default='all'); parser.add_argument('--samples',type=int,default=192); parser.add_argument('--resolution',type=int,default=1600)
@@ -58,16 +58,38 @@ def surface(n,pts,depth=.03,offset=0,g='Facade',station=0,spacing=16):
  p0,p1,p2,p3=map(Vector,pts); w=(p1-p0).length; h=((p3-p0).length+(p2-p1).length)/2; normal=(p1-p0).cross(p3-p0).normalized()
  def xyz(x,y,d=0):
   u=x/w; v=y/h; return tuple(p0*(1-u)*(1-v)+p1*u*(1-v)+p2*u*v+p3*(1-u)*v-normal*d)
- domain=box(0,0,w,h); lines=[]
+ domain=box(0,0,w,h); lines=[]; main=[]; extra=[]
  for slope in [-1.28,1.28]:
   for k in range(-30,40):
    c=k*spacing+offset+slope*station
    line=LineString([(-2*h,-2*h*slope+c),(w+2*h,(w+2*h)*slope+c)])
-   lines.append(line.buffer(.17,cap_style=2))
+   main.append(line); lines.append(line.buffer(.17,cap_style=2))
    if k%3==0:
-    line=LineString([(-2*h,-2*h*slope+c+5.3),(w+2*h,(w+2*h)*slope+c+5.3)])
-    zones=unary_union([box(0,0,w,min(45,h)),box(w*.2,h*.55,w*.8,h*.90)])
-    lines.append(line.buffer(.15,cap_style=2).intersection(zones))
+    extra.append(LineString([(-2*h,-2*h*slope+c+5.3),(w+2*h,(w+2*h)*slope+c+5.3)]))
+ base=unary_union(main); zones=unary_union([box(0,0,w,min(45,h)),box(w*.2,h*.55,w*.8,h*.90)])
+ endpoint_errors=0; density_segments=0
+ for line in extra:
+  visible=line.intersection(domain)
+  if visible.is_empty or visible.geom_type!='LineString':continue
+  ends=[line.project(Point(p)) for p in [visible.coords[0],visible.coords[-1]]]
+  crossings=line.intersection(base).intersection(domain)
+  points=[crossings] if crossings.geom_type=='Point' else list(crossings.geoms) if hasattr(crossings,'geoms') else []
+  nodes=sorted(ends+[line.project(p) for p in points if p.geom_type=='Point'])
+  requested=visible.intersection(zones)
+  pieces=[requested] if requested.geom_type=='LineString' else list(requested.geoms) if hasattr(requested,'geoms') else []
+  for piece in pieces:
+   if piece.is_empty or piece.geom_type!='LineString':continue
+   lo,hi=sorted([line.project(Point(piece.coords[0])),line.project(Point(piece.coords[-1]))])
+   d0=max([d for d in nodes if d<=lo+1e-7],default=ends[0]); d1=min([d for d in nodes if d>=hi-1e-7],default=ends[-1])
+   if d1-d0<1e-6:continue
+   segment=substring(line,d0,d1)
+   start_on_edge=Point(segment.coords[0]).distance(domain.boundary)<1e-5; end_on_edge=Point(segment.coords[-1]).distance(domain.boundary)<1e-5
+   paint=substring(line,d0-.5 if start_on_edge else d0,d1+.5 if end_on_edge else d1)
+   lines.append(paint.buffer(.15,cap_style=2)); density_segments+=1
+   for xy in [segment.coords[0],segment.coords[-1]]:
+    point=Point(xy)
+    if min(point.distance(base),point.distance(domain.boundary))>1e-5:endpoint_errors+=1
+ assert endpoint_errors==0,(n,endpoint_errors)
  grooves=unary_union(lines).intersection(domain); glazing=domain.difference(grooves)
  verts=[]; faces=[]; inds=[]
  def add(poly,d,mi):
@@ -93,7 +115,7 @@ def surface(n,pts,depth=.03,offset=0,g='Facade',station=0,spacing=16):
    if p.covers(t.representative_point()):
     st=len(v); v.extend(xyz(x,y,-.004) for x,y in list(t.exterior.coords)[:3]); f.append((st,st+1,st+2))
  mesh(n+' fine mullions',v,f,[frame],g=g)
- report['surfaces'].append(dict(name=n,width=w,height=h,depth=depth,glass_area=glazing.area,groove_area=grooves.area,domain_area=domain.area,overlap=glazing.intersection(grooves).area))
+ report['surfaces'].append(dict(name=n,width=w,height=h,depth=depth,glass_area=glazing.area,groove_area=grooves.area,domain_area=domain.area,overlap=glazing.intersection(grooves).area,density_segments=density_segments,unconnected_density_endpoints=endpoint_errors))
 def ring(cx,cy,wx,wy,z):return [(cx-wx/2,cy-wy/2,z),(cx+wx/2,cy-wy/2,z),(cx+wx/2,cy+wy/2,z),(cx-wx/2,cy+wy/2,z)]
 for n,b,t,d in [('Tower 1',(-44,80),(-33,66),(48,60)),('Tower 2',(80,-44),(66,-33),(60,48))]:
  low=ring(*b,*d,0); high=ring(*t,*d,161)
@@ -140,14 +162,19 @@ cube('West arterial viaduct',(-181,0,5),(17,850,.9),road)
 for y in range(-390,400,40):cube('Viaduct pier',(-181,y,2),(2,3,5),concrete)
 for x in [-189.2,-172.8]:cube('Viaduct parapet',(x,0,5.7),(.35,850,.6),concrete)
 for x,y,wx,wy in [(-88,-73,36,60),(27,-104,112,20),(-93,47,22,115),(48,120,116,12),(120,-8,10,170)]:cube('Lawn',(x,y,.46),(wx,wy,.12),lawn)
-# Angular planting beds and diagonal circulation, derived approximately from the site plan.
-for k,points in enumerate([
+# Union coplanar landscape beds and walks before triangulation to prevent overlap artifacts.
+beds=unary_union([Polygon(points) for points in [
  [(-110,-112),(-8,-112),(-70,-78)], [(-60,-76),(-5,-108),(35,-78)],
  [(-10,-74),(34,-108),(67,-78)], [(-112,-64),(-76,-86),(-77,14)],
- [(-112,-30),(-80,10),(-112,47)]]):
- mesh('Angular landscape bed '+str(k),[(x,y,.54) for x,y in points],[(0,1,2)],[lawn],g='Site')
-for p,q in [((-113,-116),(60,-73)),((-110,-70),(-20,-115)),((-115,-30),(-75,25))]:
- dx=q[0]-p[0]; dy=q[1]-p[1]; ob=cube('Diagonal plaza walk',((p[0]+q[0])/2,(p[1]+q[1])/2,.56),(math.hypot(dx,dy),3.2,.035),stone); ob.rotation_euler.z=math.atan2(dy,dx)
+ [(-112,-30),(-80,10),(-112,47)]]])
+walks=unary_union([LineString([p,q]).buffer(1.6,cap_style=2) for p,q in [
+ ((-113,-116),(60,-73)),((-110,-70),(-20,-115)),((-115,-30),(-75,25))]])
+for name,shape,height,mat in [('Angular landscape beds',beds.difference(walks),.54,lawn),('Diagonal plaza walks',walks,.56,stone)]:
+ v=[]; f=[]
+ for poly in polygons(shape):
+  for tri in triangulate(poly):
+   st=len(v); v.extend((x,y,height) for x,y in list(tri.exterior.coords)[:3]); f.append((st,st+1,st+2))
+ mesh(name,v,f,[mat],g='Site')
 shared_tree=None
 for i in range(115):
  if i<65:
