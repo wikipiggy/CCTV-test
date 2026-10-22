@@ -1,0 +1,146 @@
+{
+  "status": "passed",
+  "verified_png_count": 14,
+  "files": [
+    {
+      "file": "CCTV_Headquarters.blend",
+      "bytes": 2408425,
+      "sha256": "bb8b8c810d417f1428dc9518bb4f6dfc83ce3996e82670076abac1be08e9879c"
+    },
+    {
+      "file": "MODELING_PLAN.md",
+      "bytes": 3195,
+      "sha256": "248930ece192926a996046f319841e81f41d9fa52bd4482ade76de5ee4b40d6e"
+    },
+    {
+      "file": "README.md",
+      "bytes": 6919,
+      "sha256": "4ab0abc1530d0ecbbb27770c260ecb17938d65ec9f652d130a0f6ad8242c59c8"
+    },
+    {
+      "file": "build_cctv.py",
+      "bytes": 18474,
+      "sha256": "8ad4e3a90ddc102f6ba0c801b47a54f2d0893c999ad335002cbb7f837f6902ac"
+    },
+    {
+      "file": "denoise_linear.py",
+      "bytes": 1232,
+      "sha256": "122f65b3ce2a5a50bec4125687cfb419ad0a59dfe2de1d6ae1e0d98f3ce870b4"
+    },
+    {
+      "file": "geometry_validation.json",
+      "bytes": 9785,
+      "sha256": "748004b28672443c3ff3e4f60453a1ff25fc152d8a3cd21170c31f3623c5516f"
+    },
+    {
+      "file": "progress_perspective.png",
+      "bytes": 972357,
+      "sha256": "e76a581601e6f28b6848fcbf43f06d53169dbe5b5e1f8ab0003e19f116110513"
+    },
+    {
+      "file": "progress_plan.png",
+      "bytes": 823965,
+      "sha256": "fba565deb190447b6ff6cabb392f8e6060d30cc7b7a578fedac5497cda1e895e"
+    },
+    {
+      "file": "progress_south.png",
+      "bytes": 782259,
+      "sha256": "ee33e2a450f1c35ebebdae690cdc3d3d00ba0d15012d837bbe75a5eb854a7242"
+    },
+    {
+      "file": "progress_west.png",
+      "bytes": 810487,
+      "sha256": "8b60261bb26b2241ba3131ff7823e6637945fc51cd63f20cc524be7e7be88d5d"
+    },
+    {
+      "file": "render_01.png",
+      "bytes": 3277698,
+      "sha256": "9820fb002097751c3a30a82d1860027726491c1c531d6296092ac58ece68f17d"
+    },
+    {
+      "file": "render_02.png",
+      "bytes": 2967082,
+      "sha256": "050b2d25449b7ab530122c98b3cc79e450297b30569307bb191a1bb9427a5066"
+    },
+    {
+      "file": "render_03.png",
+      "bytes": 2635526,
+      "sha256": "a9863bb5d75e10314ad545ada6931ceb5018c8678e60ac9e6ce128e2c7732078"
+    },
+    {
+      "file": "render_04.png",
+      "bytes": 2642427,
+      "sha256": "7c5e964649e2939882d204030bb6d9edc98a0540fbdc8258b3db9ee05317e249"
+    },
+    {
+      "file": "render_manifest_final.json",
+      "bytes": 1028,
+      "sha256": "529f09626b0d32432891c5376c7008da3e960bbbfc7b9d2317a23e349ccdc736"
+    },
+    {
+      "file": "render_manifest_preview.json",
+      "bytes": 1030,
+      "sha256": "88d41dc92786a0926b8dfe1014775a4050c4789839ef33e92f61f1e3ff6915d1"
+    },
+    {
+      "file": "render_manifest_sample.json",
+      "bytes": 1536,
+      "sha256": "32ca6bd9d6ec5166d5a3603bba5d87c1b2dff19f77f2727ca4ae95d37458be52"
+    },
+    {
+      "file": "render_views.py",
+      "bytes": 3998,
+      "sha256": "07fdb1ff269deaf79f2c9a595cbecc6af655467ba15875dc3edc7977e55cbc27"
+    },
+    {
+      "file": "sample_macro_20mm.png",
+      "bytes": 554275,
+      "sha256": "1b5e9b63572539db3e81d0f362b1811c821181190a1da9cf60b8f660ca02c233"
+    },
+    {
+      "file": "sample_macro_30mm.png",
+      "bytes": 553054,
+      "sha256": "be160240c1d2c3178249f70d128be1dadd8363b352dfd10f90606098e3f938ad"
+    },
+    {
+      "file": "sample_macro_40mm.png",
+      "bytes": 551510,
+      "sha256": "0e292483f783fa791926160a446c9b876932ec762ef358f51287fcb74de1cc67"
+    },
+    {
+      "file": "sample_recess_20mm.png",
+      "bytes": 767853,
+      "sha256": "6d1e00299f8008fd9e0fefde487445b5c8e9f20f499b88dfe95b8b339c1227c8"
+    },
+    {
+      "file": "sample_recess_30mm.png",
+      "bytes": 770889,
+      "sha256": "a4e03f313d58f3c91fedf17f178de877527433ea0d784c6135a31bd24faeeaad"
+    },
+    {
+      "file": "sample_recess_40mm.png",
+      "bytes": 772599,
+      "sha256": "6effb79cce4522d504e3255784e8a8feaca78d5891c0eaf401c9f76d7ddc7c0e"
+    },
+    {
+      "file": "scene_validation.json",
+      "bytes": 739,
+      "sha256": "019700a9918fe581e716140df5dff5731fcf76a7f78cbfd44380447d36463743"
+    },
+    {
+      "file": "setup_dependencies.sh",
+      "bytes": 426,
+      "sha256": "f434f6983d42ae4663583c3d0aaab414ab546742e373d885c88fc383d03a8599"
+    },
+    {
+      "file": "validate_scene.py",
+      "bytes": 2193,
+      "sha256": "6c6d5a028f77b9ec437fb4adabbbeb093e2404836189ba0f6b2044fb4ac49ca6"
+    },
+    {
+      "file": "verify_outputs.py",
+      "bytes": 1771,
+      "sha256": "12d17ff7fdbb52786817911ce510e508784bfdde7e71991f923a6ff6775bf177"
+    }
+  ]
+}

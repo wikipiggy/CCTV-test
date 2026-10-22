@@ -258,14 +258,14 @@
     },
     {
       "name": "East podium1",
-      "width": 168.0,
+      "width": 137.0,
       "height": 36.0,
       "depth": 0.03,
-      "glass_area": 5520.301040537285,
-      "groove_area": 527.6989594627065,
-      "domain_area": 6048.0,
+      "glass_area": 4500.710371757326,
+      "groove_area": 431.28962824267126,
+      "domain_area": 4932.0,
       "overlap": 0.0,
-      "density_segments": 11,
+      "density_segments": 9,
       "unconnected_density_endpoints": 0
     },
     {

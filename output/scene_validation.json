@@ -9,8 +9,8 @@
     "30mm": 0.029999999329447746,
     "40mm": 0.03999999910593033
   },
-  "mesh_vertices": 290268,
-  "mesh_polygons": 127671,
+  "mesh_vertices": 288120,
+  "mesh_polygons": 126990,
   "external_image_dependencies": 0,
   "render_engine": "CYCLES",
   "denoising": false,

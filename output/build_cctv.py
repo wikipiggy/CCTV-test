@@ -137,7 +137,12 @@ for x,y in [(-45,-43),(-26,-43),(-45,-20),(-26,-20)]:
  bpy.ops.mesh.primitive_cylinder_add(vertices=48,radius=2.1,depth=.05,location=(x,y,160.965)); ob=bpy.context.object; ob.name='Circular soffit inset'; ob.data.materials.append(slot); group(ob,'Soffit')
 for n,cx,cy,wx,wy,h in [('North podium',33,93,162,34,42),('East podium',98,23,32,168,36)]:
  low=ring(cx,cy,wx,wy,0); high=ring(cx,cy,wx,wy,h)
- for i in range(4):j=(i+1)%4; surface(n+str(i),[low[i],low[j],high[j],high[i]])
+ for i in range(4):
+  j=(i+1)%4; pts=[low[i],low[j],high[j],high[i]]
+  # North podium already owns the shared east outer plane above y=76.
+  # Remove duplicate coplanar coverage; the exterior silhouette is unchanged.
+  if n=='East podium' and i==1:pts[1]=(cx+wx/2,76,0); pts[2]=(cx+wx/2,76,h)
+  surface(n+str(i),pts)
  cube(n+' roof',(cx,cy,h+.1),(wx,wy,.2),roofmat,'Architecture')
 for x in [-28,-12,4,20,36,52]:
  bpy.ops.mesh.primitive_uv_sphere_add(segments=20,ring_count=10,radius=2.4,location=(x,93,43.7)); ob=bpy.context.object; ob.name='Roof dish'; ob.scale=(1,1,.25); ob.rotation_euler[0]=.3; ob.data.materials.append(white); group(ob,'Roof detail')

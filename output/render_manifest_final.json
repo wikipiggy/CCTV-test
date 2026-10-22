@@ -1,0 +1,42 @@
+[
+  {
+    "file": "render_01.png",
+    "camera": "01 Southwest city",
+    "width": 2000,
+    "height": 2000,
+    "sample_limit": 96,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 330.9
+  },
+  {
+    "file": "render_02.png",
+    "camera": "02 Aerial closed loop",
+    "width": 2000,
+    "height": 2000,
+    "sample_limit": 96,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 448.22
+  },
+  {
+    "file": "render_03.png",
+    "camera": "03 Cantilever upward",
+    "width": 2000,
+    "height": 2000,
+    "sample_limit": 96,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 230.85
+  },
+  {
+    "file": "render_04.png",
+    "camera": "04 Southeast city",
+    "width": 2000,
+    "height": 2000,
+    "sample_limit": 96,
+    "adaptive_threshold": 0.02500000037252903,
+    "filter": "OIDN 1.4.3 HDR; isolated process",
+    "seconds": 265.83
+  }
+]

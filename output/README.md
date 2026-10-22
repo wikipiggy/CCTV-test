@@ -59,3 +59,35 @@ blender --python-exit-code 1 -b output/CCTV_Headquarters.blend -t 5 --python out
 独立降噪通过 PyPI `oidn==0.2.1` 的 Python 绑定调用 Intel Open Image Denoise 1.4.3（Apache-2.0）。依赖只安装在环境目录，不把第三方二进制打入 Git 仓库。
 
 三档凹槽在全景中的视觉差异很小，30 mm 作为中间试验值采用；近景用于查看槽壁、节点和阴影。验证脚本同时从实际样板顶点量取凹入深度，不只读取自定义属性。
+
+## 本版交付与限制
+
+本版提供可编辑外壳、真实开槽几何及参考图引导的参数化重建。平面尺寸与不规则网格包含推定；周边建筑、植被、车辆和玻璃光学表现仍为程序化近似。本版偏建筑可视化，尚非测绘级模型或照片级实景复刻，不将输出分辨率等同于实景还原精度。
+
+- [下载 Blender 模型](CCTV_Headquarters.blend)
+- [从零生成模型的 bpy 脚本](build_cctv.py)
+- [无头渲染脚本](render_views.py)
+- [建模参数与依据](MODELING_PLAN.md)
+- [实际场景验证结果](scene_validation.json)
+- [交付文件 SHA-256 清单](delivery_manifest.json)
+
+| 正式视角 | 图像 |
+|---|---|
+| 西南整体 | [render_01.png](render_01.png) |
+| 鸟瞰闭环 | [render_02.png](render_02.png) |
+| 悬挑仰视 | [render_03.png](render_03.png) |
+| 东南整体 | [render_04.png](render_04.png) |
+
+四张正式图均为 2000×2000 PNG。另有六张 1200×1200 凹槽样板、四张 1000×1000 进度图。临时线性 EXR 与 NumPy 缓冲在处理后删除；运行日志和 Blender 自动备份不作为最终交付文件。
+
+重新检查全部交付文件：
+
+```bash
+python output/verify_outputs.py
+```
+
+仅重渲染一个正式视角（保留其他有效结果）：
+
+```bash
+blender -b output/CCTV_Headquarters.blend -t 5 --python-exit-code 1 --python output/render_views.py -- --mode final --only render_04
+```
