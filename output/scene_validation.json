@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "object_count": 1242,
+  "camera_count": 13,
+  "recessed_surfaces": 30,
+  "body_height_m": 234.00001525878906,
+  "external_image_dependencies": 0,
+  "render_engine": "CYCLES",
+  "denoising": false,
+  "checks": [
+    "finite mesh coordinates",
+    "expected facade/sample count",
+    "body maximum 234m",
+    "20/30/40mm recess metadata",
+    "glass and groove area partition",
+    "zero external image dependencies"
+  ]
+}
